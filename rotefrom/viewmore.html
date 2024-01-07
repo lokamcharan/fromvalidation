@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table,
+      tr,
+      th,
+      td,
+      img {
+        border: 1px solid black;
+        
+        padding: 10px;
+        border-radius: 10px;
+      }
+      img {
+        width: 200px;
+        height: 250px;
+        background-color: lightslategray;
+        text-align: center;
+      }
+      table td {
+        background-color: lightslategray;
+      }
+      table{width: 100%;}
+
+     
+  </style>
+</head>
+<body>
+<img src="" alt="">
+<h1></h1>
+  <script>
+    var a=localStorage.getItem("viewmore");
+console.log(a);
+
+var b=JSON.parse(a);
+console.log(b);
+
+let img =document.getElementsByTagName("img");
+img[0].setAttribute("src",b.image)
+img[0].style.width="250px";
+
+
+// var c=[]
+// c.push(b)
+//  c.map((val)=>{
+// let d=document.createElement("li")
+// d.innerText=val.id
+// document.body.appendChild(d)
+//  })
+ var c=[]
+c.push(b)
+ c.map((val)=>{
+let d=document.createElement("li")
+d.innerText="Title:- "+val.title
+document.body.appendChild(d)
+ })
+
+ var c=[]
+c.push(b)
+ c.map((val)=>{
+let d=document.createElement("li")
+d.innerText="Description:- "+val.description
+document.body.appendChild(d)
+ })
+ 
+ var c=[]
+c.push(b)
+ c.map((val)=>{
+let d=document.createElement("li")
+d.innerText="Category:- "+val.category
+document.body.appendChild(d)
+ })
+ 
+ var c=[]
+c.push(b)
+ c.map((val)=>{
+let d=document.createElement("li")
+d.innerText="Price:- "+val.price
+document.body.appendChild(d)
+ })
+
+ var c=[]
+c.push(b)
+ c.map((val)=>{
+let d=document.createElement("li")
+d.innerText="Rating:- "+val.rating.rate
+document.body.appendChild(d)
+ })
+ 
+
+ var bt1 = document.createElement("button");
+  bt1.innerText = "Add to Cart";
+  bt1.addEventListener("click", function () {
+ localStorage.setItem("Add to Cart", JSON.stringify(b));
+    window.location.assign("./cart.html");
+  });
+
+  document.body.appendChild(bt1);
+
+
+
+  </script>
+</body>
+</html>
